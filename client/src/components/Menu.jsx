@@ -59,48 +59,49 @@ export default function Menu(props) {
 
   return (
     <div>
-      <div>Appetizers</div>
+      <div className="menu-title">Menu</div>
+      <div className="menu-category">Appetizers</div>
       {appetizers.map((appetizer, index) => (
         <div index={index}>
-          <div>
-            <div>{appetizer.name}</div>
-            <div>{appetizer.price}</div>
+          <div className="menu-item-container">
+            <div className="menu-item">{appetizer.name}</div>
+            <div className="menu-item">{appetizer.price}</div>
           </div>
         </div>
       ))}
 
 
 
-      <div>Entrees</div>
+      <div className="menu-category">Entrees</div>
       {entrees.map((entree, index) => (
         <div index={index}>
-          <div>
-            <div>{entree.name}</div>
-            <div>{entree.price}</div>
+          <div className="menu-item-container">
+            <div className="menu-item">{entree.name}</div>
+            <div className="menu-item">{entree.price}</div>
           </div>
         </div>
       ))}
 
 
 
-      <div>Desserts</div>
+      <div className="menu-category">Desserts</div>
       {desserts.map((dessert, index) => (
         <div index={index}>
-          <div>
-            <div>{dessert.name}</div>
-            <div>{dessert.price}</div>
+          <div className="menu-item-container">
+            <div className="menu-item">{dessert.name}</div>
+            <div className="menu-item">{dessert.price}</div>
           </div>
         </div>
       ))}
 
 
 
-      <div>Drinks</div>
+      <div className="menu-category">Drinks</div>
       {drinks.map((drink, index) => (
         <div index={index}>
-          <div>
-            <div>{drink.name}</div>
-            <div>{drink.price}</div>
+          <div className="menu-item-container">
+            <div className="menu-item">{drink.name}</div>
+            <div className="menu-item">{drink.price}</div>
           </div>
         </div>
       ))}

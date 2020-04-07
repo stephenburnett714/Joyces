@@ -59,7 +59,7 @@ class Nav extends React.Component {
       </NavLink>
 
         <div className="container">
-          <button type="button" class="button" onClick={this.handleButtonClick}>
+          <button type="button" className="button" onClick={this.handleButtonClick}>
             ☰
          </button>
           {this.state.open && (

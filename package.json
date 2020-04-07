@@ -1,6 +1,6 @@
 {
-"name": "Joyces",
-"license": "MIT",
+  "name": "Joyces",
+  "license": "MIT",
   "engines": {
     "node": "10.15.3",
     "yarn": "1.15.2"
@@ -11,4 +11,3 @@
     "heroku-postbuild": "yarn build && yarn deploy"
   }
 }
-

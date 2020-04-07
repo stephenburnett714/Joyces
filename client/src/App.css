@@ -10,7 +10,7 @@
   }
 }
 
-/* hamberger menu */
+/* Nav Bar */
 .container { 
   position: relative; 
   display: inline-block; 
@@ -54,23 +54,57 @@
 
   .logoStyle {
     font-family: 'Pinyon Script', cursive;
-    font-size: 80px;
+    font-size: 6.5vw;
     padding: 0;
     margin:0;
     margin-left: 40px;
-    
+    color: black;
+    text-decoration: black;
+  }
+
+  .home-nav-link {
+    text-decoration: black;
+    margin: auto 0;
+
   }
 
   .headerStyle {
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.49);
+    background-color: white;
+    align-items: center;
   }
 
   .navTitles {
     margin:10px;
-
   }
+
+  .nav-links {
+    color:black;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 2vw;
+    font-style: oblique;
+  }
+
+  .nav-container {
+    align-items: center;
+    display: flex;
+  }
+
+  @media (max-width: 800px) {
+    .nav-links {
+    display: none;
+    }
+    }
+
+  @media (min-width: 800px) {
+    .button {
+    display: none;
+    }
+    }
+
+  /**************** Cart *************** */
 
   .cart-category-headers {
     display: flex;
@@ -83,12 +117,8 @@
     font-size: 30px;
   }
 
-  @media (max-width: 800px) {
-    .element {
-    display: none;
-    }
-    }
 
+  /************** Home Screen ***************/
     .home-screen-back-ground {
       background: url(https://images.unsplash.com/photo-1566927599204-d5d3142481aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80);
       background-repeat: no-repeat;
@@ -106,40 +136,44 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 90px;
+      font-size: 10vw;
       background-color: rgba(0, 0, 0, 0.49);
       color: white;
       font-family: 'Pinyon Script', cursive;
       border-radius: 15px;
     }
 
-    .nav-links {
-      color:black;
-      margin: 5px;
-      text-decoration: none;
-      font-size: 25px;
-      font-style: oblique;
+    @media (min-width: 1000px) {
+    .home-screen-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 7vw;
+      background-color: rgba(0, 0, 0, 0.49);
+      color: white;
+      font-family: 'Pinyon Script', cursive;
+      border-radius: 15px;
     }
+  }
 
-
+/**************** Footer *************** */
     .footer {
       display: flex;
-      height: 10vh;
-      background-color: rgba(0, 0, 0, 0.49);
+      height: 5vh;
+      background-color: white;
       justify-content: space-evenly;
       align-items: center;
-      font-size: 20px;
+      font-size: 1.8vw;
     }
 
-    .nav-container {
-      align-items: center;
-      display: flex;
-    }
 
+    /**************** Menu *************** */
     .menu-container {
       height: 80vh;
     }
 
+    /**************** Events *************** */
     .event-background {
       background-color: black;
     }
@@ -148,6 +182,8 @@
       color:white;
     }
 
+
+    /**************** About *************** */
     .about-picture {
       margin-top: 20px;
       height: 55vh;
