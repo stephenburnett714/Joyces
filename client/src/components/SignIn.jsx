@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function SignIn(props) {
   return (
     <div>
-      <h2>Sign In</h2>
+      <div className="signin-title">Sign In</div>
       <hr />
       <form onSubmit={props.handleLogin} >
         <p>Username:</p>
