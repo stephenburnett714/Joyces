@@ -4,7 +4,7 @@ import artist from '../images/event-artist.jpg'
 export default function Events(props) {
   return (
     <div className="event-background">
-      
+      <div className="event-title">Events</div>
        <img className="event-picture" src={artist} alt="Photo Credit Antoine Julien"/>
      
         <h1 className="event-text-color">Next Up</h1>

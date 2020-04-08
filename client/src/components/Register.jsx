@@ -5,7 +5,7 @@ export default function Register(props) {
   return (
     <div>
       <form onSubmit={props.handleRegister}>
-        <h1>Welcome to Joyce's</h1>
+        <div className="register-title">Welcome to Joyce's</div>
         <hr />
         <div>
           <p>First Name:</p>

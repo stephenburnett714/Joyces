@@ -158,6 +158,16 @@
       font-size: 1.8vw;
     }
 
+    @media (max-width: 1000px) {
+    .footer {
+      display: flex;
+      height: 5vh;
+      background-color: white;
+      justify-content: space-evenly;
+      align-items: center;
+      font-size: 3vw;
+    }
+  }
 
     /**************** Menu *************** */
     .menu-container {
@@ -264,12 +274,20 @@
   }
 
   /**************** Delivery *************** */
+
+  .delivery-title {
+    margin-top: 1vh;
+    font-family: 'Pinyon Script', cursive;
+    font-size: 5vw;
+    color: black
+  }
+
   .delivery-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 80vh;
+    height: 65vh;
   }
 
   .delivery-option {
@@ -284,11 +302,27 @@
   @media (max-width: 800px) {
     .delivery-container {
       flex-direction: column;
-      height: 90vh;
+      height: 80vh;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .delivery-title {
+    margin-top: 5vh;
+    font-size: 10vw;
     }
   }
 
     /**************** Events *************** */
+
+    .event-title {
+      margin-top: 1vh;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 5vw;
+      color: white;
+    }
+
+
     .event-background {
       background-color: black;
       background-size: cover;
@@ -308,19 +342,84 @@
       border-radius: 10px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
       .event-picture {
         background-size: cover;
         height: auto;
         width: 100vw;
         border-radius: 10px;
       }
+
+      .event-title {
+        margin-top: 5vh;
+        font-size: 10vw;
+        }
+
     }
 
     /**************** About *************** */
+
+    .about-title {
+      margin-top: 1vh;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 5vw;
+      color: black;
+    }
+
     .about-picture {
       margin-top: 20px;
-      height: 55vh;
+      height: 45vh;
+      width: 25vw;
+      border-radius: 1000px;
+    }
+
+    .about-text-container {
+      margin: 5vh 20vw 5vh 20vw;
+    }
+
+    @media (max-width: 1000px) {
+    .about-picture {
+      margin-top: 20px;
+      height: auto;
       width: 35vw;
       border-radius: 1000px;
+    }
+
+    .about-title {
+      margin-top: 5vh;
+      font-size: 10vw;
+      }
+  }
+
+    /**************** Profile *************** */
+
+    .profile-title {
+      margin-top: 1vh;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 5vw;
+      color: black;
+    }
+
+    @media (max-width: 1000px) {
+      .profile-title {
+        margin-top: 5vh;
+        font-size: 10vw;
+      }
+    }
+
+
+    /**************** Register *************** */
+
+    .register-title {
+      margin-top: 1vh;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 5vw;
+      color: black;
+    }
+
+    @media (max-width: 1000px) {
+      .register-title {
+        margin-top: 5vh;
+        font-size: 10vw;
+      }
     }

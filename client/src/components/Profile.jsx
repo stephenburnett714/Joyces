@@ -7,7 +7,7 @@ console.log(localStorage.getItem('id'))
 
   return (
     <div>
-        <div>Profile</div>
+        <div className="profile-title">Profile</div>
         <hr/>
         <div>First Name: {localStorage.getItem('first_name') ? localStorage.getItem('first_name') : "Unknown"}</div>
         <div>Last Name: {localStorage.getItem('last_name') ? localStorage.getItem('last_name') : "Unknown"}</div>

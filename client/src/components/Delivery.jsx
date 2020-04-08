@@ -7,6 +7,7 @@ export default function Delivery(props) {
 
   return (
     <div>
+      <div className="delivery-title">Delivery Options</div>
       <div className="delivery-container">
         <div className="delivery-option-container">
           <Link exact activeClassName="active" to="/cart">

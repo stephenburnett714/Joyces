@@ -6,10 +6,9 @@ export default function Cart(props) {
 
 
   const [catList, setCatList] = useState([])
-  const [refresh, triggerRefresh] = useState(0)
+  const [allProducts, setAllProducts] = useState([])
   const [orderList, setOrderList] = useState({})
   const [submitedCart, setSubmitedCart] = useState({})
-  const [newOrderNumber, setNewOrderNumber] = useState({})
   
   
 
@@ -27,7 +26,21 @@ export default function Cart(props) {
 
 
   useEffect(()=>{
-    let cart = catList.filter(item => {
+    const fetchData = async () => {
+    try {
+      const response = await getAllProducts()
+      setAllProducts(response)
+      console.log(response)
+    } catch(e){
+      throw e
+    }}
+    fetchData()
+  },[])
+
+
+
+  useEffect(()=>{
+    let cart = allProducts.filter(item => {
       if(Object.keys(orderList).includes(item.id.toString())){
         let q = orderList[item.id]
 
@@ -81,14 +94,10 @@ const createOrder = async () => {
     console.log(order)
 }
 
-// const handleCart = async () => {
-//   const currentCart = await registerUser({user: {...authFormData}});
-//   setSubmitedCart({ currentCart });
 
 
 const submitCart = () => {
   createOrder()
-
   }
 
 
@@ -110,7 +119,7 @@ if(props.categoryList && props.categoryList) {
         <div>Menu Options</div>
         <div>{props.category}</div>
 
-        {catList.map((product, index) => (
+        {allProducts.map((product, index) => (
             <div index={index}>
                 <div>
 

@@ -62,9 +62,6 @@ class Nav extends React.Component {
 
         <div className="container">
         <FontAwesomeIcon type="button"  size="" onClick={this.handleButtonClick} icon={faBars} className="button"/>
-          {/* <button type="button" className="button" onClick={this.handleButtonClick}>
-            ☰
-         </button> */}
           {this.state.open && (
             <div class="dropdown" class="link-names">
               <Link exact activeClassName="active" to="/">Home</Link>
@@ -73,6 +70,8 @@ class Nav extends React.Component {
               <Link exact activeClassName="active" to="/events">Events</Link>
               <Link exact activeClassName="active" to="/about">About</Link>
               <Link exact activeClassName="active" to="/profile">Profile</Link>
+              <Link exact activeClassName="active" to="/register">Register</Link>
+              <Link exact activeClassName="active" to="/signin">Sign-In</Link>
             </div>
           )}
         </div>
