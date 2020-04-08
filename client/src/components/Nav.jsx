@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
 class Nav extends React.Component {
@@ -59,9 +61,10 @@ class Nav extends React.Component {
       </NavLink>
 
         <div className="container">
-          <button type="button" className="button" onClick={this.handleButtonClick}>
+        <FontAwesomeIcon type="button"  size="" onClick={this.handleButtonClick} icon={faBars} className="button"/>
+          {/* <button type="button" className="button" onClick={this.handleButtonClick}>
             ☰
-         </button>
+         </button> */}
           {this.state.open && (
             <div class="dropdown" class="link-names">
               <Link exact activeClassName="active" to="/">Home</Link>

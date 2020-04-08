@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+
+/* font-family: 'Pinyon Script', cursive; */
 @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
 
 
@@ -19,7 +21,6 @@
   cursor: pointer; 
   outline: 0; 
   height:5vw;
-  /* font-size: 40vw;  */
 }
 
 .dropdown { 
