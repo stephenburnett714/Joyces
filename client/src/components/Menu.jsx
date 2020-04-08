@@ -60,66 +60,66 @@ export default function Menu(props) {
   return (
     <div>
 
-<div className="menu-screen-container">
-    <div className="menu-screen-back-ground">
-      <div className="menu-title">Menu</div>
+      <div className="menu-screen-container">
+        <div className="menu-screen-back-ground">
+          <div className="menu-title">Menu</div>
 
-      <div className="menu-underline"></div>
-<div className="menu-category-container">
-    <div>
-      <div className="menu-category">Appetizers</div>
-      {appetizers.map((appetizer, index) => (
-        <div index={index}>
-          <div className="menu-item-container">
-            <div className="menu-item">{appetizer.name}</div>
-            <div className="menu-item">${appetizer.price}</div>
+          <div className="menu-underline"></div>
+          <div className="menu-category-container">
+            <div>
+              <div className="menu-category">Appetizers</div>
+              {appetizers.map((appetizer, index) => (
+                <div index={index}>
+                  <div className="menu-item-container">
+                    <div className="menu-item">{appetizer.name}</div>
+                    <div className="menu-item">${appetizer.price}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+
+            <div>
+              <div className="menu-category">Entrees</div>
+              {entrees.map((entree, index) => (
+                <div index={index}>
+                  <div className="menu-item-container">
+                    <div className="menu-item">{entree.name}</div>
+                    <div className="menu-item">${entree.price}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+
+            <div>
+              <div className="menu-category">Desserts</div>
+              {desserts.map((dessert, index) => (
+                <div index={index}>
+                  <div className="menu-item-container">
+                    <div className="menu-item">{dessert.name}</div>
+                    <div className="menu-item">${dessert.price}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+
+            <div>
+              <div className="menu-category">Drinks</div>
+              {drinks.map((drink, index) => (
+                <div index={index}>
+                  <div className="menu-item-container">
+                    <div className="menu-item">{drink.name}</div>
+                    <div className="menu-item">${drink.price}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+          <div className="menu-underline"></div>
         </div>
-      ))}
       </div>
-
-
-      <div>
-      <div className="menu-category">Entrees</div>
-      {entrees.map((entree, index) => (
-        <div index={index}>
-          <div className="menu-item-container">
-            <div className="menu-item">{entree.name}</div>
-            <div className="menu-item">${entree.price}</div>
-          </div>
-        </div>
-      ))}
-      </div>
-
-
-      <div>
-      <div className="menu-category">Desserts</div>
-      {desserts.map((dessert, index) => (
-        <div index={index}>
-          <div className="menu-item-container">
-            <div className="menu-item">{dessert.name}</div>
-            <div className="menu-item">${dessert.price}</div>
-          </div>
-        </div>
-      ))}
-      </div>
-
-
-      <div>
-      <div className="menu-category">Drinks</div>
-      {drinks.map((drink, index) => (
-        <div index={index}>
-          <div className="menu-item-container">
-            <div className="menu-item">{drink.name}</div>
-            <div className="menu-item">${drink.price}</div>
-          </div>
-        </div>
-      ))}
-      </div>
-      </div>
-      <div className="menu-underline"></div>
-    </div>
-    </div>
     </div>
 
   );
