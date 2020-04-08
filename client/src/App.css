@@ -4,11 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap');
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 /* Nav Bar */
 .container { 
@@ -23,7 +18,8 @@
   color: #333; 
   cursor: pointer; 
   outline: 0; 
-  font-size: 40px; 
+  height:5vw;
+  /* font-size: 40vw;  */
 }
 
 .dropdown { 
@@ -172,6 +168,87 @@
     .menu-container {
       height: 80vh;
     }
+
+    .menu-title {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 5vw;
+      color: white
+    }
+
+    .menu-category {
+      font-size: 2vw;
+      text-decoration: underline;
+      margin-bottom: 2vh;
+    }
+
+    .menu-underline {
+      border-bottom: 1px solid white;
+    }
+
+    .menu-item-container {
+      display: flex;
+      flex-direction: row;
+      width: 15vw;
+      justify-content: space-between;
+    }
+
+    .menu-category-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 3vh 0 3vh 0;
+    background-color: rgba(255, 255, 255, .7); 
+    }
+
+    .menu-item {
+      margin-bottom: 1vh;
+      font-size: 1.2vw;
+    }
+    
+
+    .menu-screen-back-ground {
+      background: url(./images/menu-background.jpg);
+      width: auto;
+      height: 100vh;
+      position: relative;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .menu-screen-back-ground {
+      width: 100vw;
+      height: 80vh;
+    }
+
+    @media (max-width: 1000px) {
+      .menu-category-container {
+        flex-direction: column;
+        align-items: center;
+      }
+        .menu-title {
+          font-family: 'Pinyon Script', cursive;
+          font-size: 12vw;
+          color: white
+        }
+
+        .menu-category {
+          font-size: 5vw;
+          text-decoration: underline;
+          margin-bottom: 2vh;
+        }
+
+
+        .menu-item {
+          margin-bottom: 1vh;
+          font-size: 1.7vh;
+        }
+
+        .menu-item-container {
+          width: 50vw;
+        }
+      }
+
 
     /**************** Events *************** */
     .event-background {
