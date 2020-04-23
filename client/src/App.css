@@ -171,7 +171,7 @@
 
     /**************** Menu *************** */
     .menu-container {
-      height: 80vh;
+      height: 100vh;
     }
 
     .menu-title {
@@ -258,12 +258,18 @@
           width: 100vw;
         }
 
+        .menu-screen-back-ground {
+          width: 100vw;
+          height: 90vh;
+        }
+
       }
 
     /**************** Cart *************** */
 
-  .cart-category-headers {
+  .cart {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
   }
 
@@ -272,6 +278,35 @@
     margin: 10px;
     font-size: 30px;
   }
+
+  .menu-options {
+      width: 50vw;
+  }
+
+  .current-order {
+    width: 40vw;
+  }
+
+  .product-option-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+  }
+
+  .order-option-container {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+  }
+
+  @media (max-width: 1000px) {
+  .cart {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 
   /**************** Delivery *************** */
 

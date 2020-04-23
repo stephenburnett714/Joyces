@@ -1,51 +1,51 @@
 import React, { useState, useEffect } from 'react';
-import {getByCategory, getAllProducts, newOrder} from '../services/api-helper'
+import { getAllProducts, newOrder } from '../services/api-helper'
 
 export default function Cart(props) {
 
 
 
-  const [catList, setCatList] = useState([])
+
   const [allProducts, setAllProducts] = useState([])
   const [orderList, setOrderList] = useState({})
-  const [submitedCart, setSubmitedCart] = useState({})
+  console.log(orderList)
   
+function total(x) {
+  const values = []
   
+  for (const [quantity, price] of Object.values(x)) {
+    console.log(Number(quantity) * parseFloat(price))
+    values.push(parseFloat(price))
+    console.log(values)
+}
 
-  useEffect(()=>{
+}
+
+
+
+  useEffect(() => {
     const fetchData = async () => {
-    try {
-      const response = await getByCategory(props.category)
-      setCatList(response)
-    } catch(e){
-      throw e
-    }}
+      try {
+        const response = await getAllProducts()
+        setAllProducts(response)
+        console.log(response)
+      } catch (e) {
+        throw e
+      }
+    }
     fetchData()
-  },[props.category])
+  }, [])
 
 
 
-  useEffect(()=>{
-    const fetchData = async () => {
-    try {
-      const response = await getAllProducts()
-      setAllProducts(response)
-      console.log(response)
-    } catch(e){
-      throw e
-    }}
-    fetchData()
-  },[])
-
-
-
-  useEffect(()=>{
+  useEffect(() => {
     let cart = allProducts.filter(item => {
-      if(Object.keys(orderList).includes(item.id.toString())){
+      if (Object.keys(orderList).includes(item.id.toString())) {
         let q = orderList[item.id]
 
-        return Object.assign(item, {quantity: q})
-      }})
+        return Object.assign(item, { quantity: q })
+      }
+    })
 
     console.log(cart)
     props.setCurOrder(cart)
@@ -56,105 +56,101 @@ export default function Cart(props) {
 
 
 
-const handleUpClick = (e) => {
-  let name = e.target.name
-  if(orderList.hasOwnProperty(name)){
-    setOrderList(prevState => ({
-      ...prevState,
-      [name]: prevState[name] += 1
-    }))
-  }else{
-    setOrderList(prevState => ({
-      ...prevState,
-      [name]: 1
-    }))
+  const handleUpClick = (e) => {
+    let name = e.target.name
+    if (orderList.hasOwnProperty(name)) {
+      setOrderList(prevState => ({
+        ...prevState,
+        [name]: prevState[name] += 1
+      }))
+    } else {
+      setOrderList(prevState => ({
+        ...prevState,
+        [name]: 1
+      }))
+    }
+    total(orderList)
   }
-}
 
-const handleDownClick = (e) => {
-  let name = e.target.name
-  if(orderList.hasOwnProperty(name)){
-    setOrderList(prevState => ({
-      ...prevState,
-      [name]: prevState[name] -= 1
-    }))
-  }else{
-    setOrderList(prevState => ({
-      ...prevState,
-      [name]: 1
-    }))
+  const handleDownClick = (e) => {
+    let name = e.target.name
+    if (orderList.hasOwnProperty(name)) {
+      setOrderList(prevState => ({
+        ...prevState,
+        [name]: prevState[name] -= 1
+      }))
+    } else {
+      setOrderList(prevState => ({
+        ...prevState,
+        [name]: 1
+      }))
+    }
+total(orderList)
   }
-}
 
 
 
-////////////// Submit Cart Functions ////////////////
-const createOrder = async () => {
+  ////////////// Submit Cart Functions ////////////////
+  const createOrder = async () => {
     const order = await newOrder(localStorage.getItem("id"), localStorage.getItem("address"), props.delivery, props.hash)
     console.log(order)
-}
-
-
-
-const submitCart = () => {
-  createOrder()
   }
 
 
 
-if(props.categoryList && props.categoryList) {
-
-  return (
-    <div>
-      <div className="cart-category-headers">
-    <div className="cart-categories" onClick={() => props.setCategory("appetizer")}>Appetizers</div>
-    <div className="cart-categories" onClick={() => props.setCategory("entree")}>Entree</div>
-    <div className="cart-categories" onClick={() => props.setCategory("dessert")}>Dessert</div>
-    <div className="cart-categories" onClick={() => props.setCategory("drink")}>Drinks</div>
-    </div>
-    <div>
-      <h1>{`${props.delivery} Cart`}</h1>
-      </div>
-      <div>
-        <div>Menu Options</div>
-        <div>{props.category}</div>
-
-        {allProducts.map((product, index) => (
-            <div index={index}>
-                <div>
+  const submitCart = () => {
+    createOrder()
+  }
 
 
-                  {product.name} 
-                  Price:{product.price}
-                  <button  name={`${product.id}`} onClick={handleDownClick}>-</button>
-                  <input readOnly name={`text-input-${product.id}`} type="integer" value={product.quantity} style={{width: '20px'}}/>
-                  <button  name={`${product.id}`} onClick={handleUpClick}>+</button>
-                  
+
+  if (allProducts && allProducts) {
+
+    return (
+      <div >
+        <h1>{`${props.delivery} Cart`}</h1>
+        <div className="cart">
+
+
+          <div className="menu-options">
+            <div>Menu Options</div>
+            <div>{props.category}</div>
+
+            {allProducts.map((product, index) => (
+              <div index={index}>
+                <div className="product-option-container">
+                  <div>{product.name}</div>
+                  <div>Price:$ {product.price}</div>
+                  <div>
+                    <button name={`${product.id}`} onClick={handleDownClick}>-</button>
+                    <input readOnly name={`text-input-${product.id}`} type="integer" value={product.quantity} style={{ width: '20px' }} />
+                    <button name={`${product.id}`} onClick={handleUpClick}>+</button>
+                  </div>
                 </div>
-            </div>
-        ))}
-      </div>
-      <div>
-        <p>Current Orders</p>
-        {props.curOrders.map((item, index) => (
-          <div index={index}>
-            <div>
-              <div>{item.name}</div>
-              <div>{item.price}</div>
-              <div>{item.quantity}</div>
-              <div>{item.quantity*item.price}</div>
+              </div>
+            ))}
+          </div>
 
-              <hr/>
-            </div>
-            </div>
-        ))}
-        <button onClick={submitCart}>Submit Order</button>
+          <div className="current-order">
+            <div>Current Orders</div>
+            {props.curOrders.map((item, index) => (
+              <div index={index}>
+                <div className="order-option-container">
+                  <div>{item.name}</div>
+                  <div>{item.quantity}</div>
+                  <div>${item.quantity * item.price}</div>
+
+                </div>
+              </div>
+            ))}
+            <div>Total: </div>
+            <button onClick={submitCart}>Submit Order</button>
+          </div>
+        </div>
       </div>
-    </div>
-    
-  )
-        }
-        else {
-          return "Loading"
-        }
+    )
+  }
+  else {
+    return "Loading"
+  }
 }

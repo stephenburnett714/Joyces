@@ -5,7 +5,7 @@ export default function Events(props) {
   return (
     <div className="event-background">
       <div className="event-title">Events</div>
-       <img className="event-picture" src={artist} alt="Photo Credit Antoine Julien"/>
+       <img className="event-picture" src={artist} alt="Credit Antoine Julien"/>
      
         <h1 className="event-text-color">Next Up</h1>
         <h2 className="event-text-color">Steel Pan Boyz</h2>

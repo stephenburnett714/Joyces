@@ -34,8 +34,6 @@ export default function Main(props) {
           cart={props.cart}
           setCart={props.setCart}
           delivery={props.delivery}
-          categoryList={props.categoryList}
-          setCategoryList={props.setCategoryList}
           category={props.category}
           setCategory={props.setCategory}
           curOrders={curOrders}

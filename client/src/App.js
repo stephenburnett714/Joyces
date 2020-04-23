@@ -12,7 +12,6 @@ export default function App(props) {
   const [delivery, setDelivery] = useState('delivery')
   const [currentUser, setCurrentUser] = useState({})
   const [cart, setCart] = useState([])
-  const [category, setCategory] = useState('appetizer')
   const [categoryList, setCategoryList] = useState([])
   const [user, setUser] = useState({})
   const [email, setEmail] = useState('')
@@ -57,9 +56,6 @@ export default function App(props) {
   }
 
 
-  const handleLoginButton = () => {
-    props.history.push("/signin")
-  }
 
   const handleLogin = async (e) => {
       e.preventDefault()
@@ -124,7 +120,7 @@ export default function App(props) {
   }
 
   const deleteUser = () => {
-    const deletedUser = destroyUser(localStorage.getItem('id'))
+    destroyUser(localStorage.getItem('id'))
     localStorage.removeItem("id");
     localStorage.removeItem("first_name");
     localStorage.removeItem("last_name");
@@ -155,14 +151,11 @@ export default function App(props) {
         setCurrentUser={setCurrentUser}
         categoryList= {categoryList}
         setCategoryList={setCategoryList}
-        category={category}
-        setCategory={setCategory}
         handleRegister={handleRegister}
         handleChange={authHandleChange}
         userData={user}
         authFormData={authFormData}
         setAuthFormData={setAuthFormData}
-        setCurrentUser={setCurrentUser}
         handleLogin={handleLogin}
         handleLogout={handleLogout}
         updateEmail={updateEmail}
